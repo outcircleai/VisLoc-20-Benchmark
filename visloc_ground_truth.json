@@ -1,0 +1,306 @@
+{
+  "benchmark_version": "1.0",
+  "meta": {
+    "name": "VisLoc-20 Ground Truth Data",
+    "description": "Programmatic Evaluation Protocol for the VisLoc-20 Benchmark",
+    "maintainer": "OutCaps Engineering",
+    "methodology": "Dual-Gate Evaluation: Gate 1 (Deterministic UI Physics) must be strictly passed before Semantic Meaning (Gate 2) is evaluated.",
+    "gate_1_global_rules": [
+      "NO_BLIND_WORD_CHOPPING",
+      "MAX_READING_SPEED_21_CPS",
+      "NO_MANUAL_TIMELINE_DRAGGING",
+      "NO_UI_COLLISIONS"
+    ]
+  },
+  "videos": [
+    {
+      "id": "01_the_auctioneer",
+      "axis": "Layout & Physics",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "max_cps_limit": 21.0,
+        "max_lines_per_screen": 2
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Target translation must not exceed 21 CPS and must force a clean max 2-line visual layout.",
+        "gate_2_semantics": "LLM must execute transcreation: aggressively delete literal adjectives ('absolutely', 'stubborn', 'officially') to preserve the active verbs 'crush' and 'obliterate'."
+      },
+      "standard_app_failure_mode": "Translates literally, expanding character count by 30%. Results in an unreadable 4-line text wall covering the speaker's face, or a strobe-light flash of 10 cards at 35+ CPS."
+    },
+    {
+      "id": "02_cinematic_pause",
+      "axis": "Layout & Physics",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "timing_alignment": "strict_blank_screen",
+        "pause_duration_sec": 3.0
+      },
+      "pass_criteria": {
+        "gate_1_physics": "The 3-second pause must result in a completely blank screen.",
+        "gate_2_semantics": "Segmenter must mathematically shift the preposition backward to complete the thought before the pause occurs. No dangling articles."
+      },
+      "standard_app_failure_mode": "Leaves a dangling article (e.g., 'the' or 'am') stranded on screen alone for 3 full seconds of silence."
+    },
+    {
+      "id": "03_spaceless_gauntlet",
+      "axis": "Layout & Physics",
+      "source_language": "en",
+      "target_language_test": "ja",
+      "constraints": {
+        "text_shaping": "kinsoku_shori"
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Line breaks must strictly obey Japanese Kinsoku Shori rules (no slicing of Kanji compounds or severing grammatical particles from nouns).",
+        "gate_2_semantics": "Maintain dense B2B/tech formality without outputting conversational particles."
+      },
+      "standard_app_failure_mode": "Uses greedy pixel-filling to hit the visual edge, blindly chopping spaceless Japanese text directly through the middle of a syllable."
+    },
+    {
+      "id": "04_b2b_jargon",
+      "axis": "Semantic Context",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "named_entity_protection": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Line breaks must not occur inside an acronym (e.g., 'CI/ \\n CD').",
+        "gate_2_semantics": "Must globally protect proper nouns. 'ROI' and 'CI/CD pipeline' must remain untranslated and structurally intact."
+      },
+      "standard_app_failure_mode": "Hallucinates literal translations of acronyms (e.g., 'Return on Investment' becomes 'Kapitalrendite'), inflating character length and breaking the visual bounding box."
+    },
+    {
+      "id": "05_gen_z_slang",
+      "axis": "Semantic Context",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "transcreation_level": "extreme_cultural"
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Must maintain conversational visual pacing matching the speaker's vocal fry (< 18 CPS).",
+        "gate_2_semantics": "Must bypass literal dictionary translation entirely and map 'main character energy' and 'no cap' to native target-language Gen-Z slang."
+      },
+      "standard_app_failure_mode": "Outputs literal grammatical gibberish ('Giving main character energy, no cap' -> 'Gibt Hauptcharakter Energie, keine Kappe')."
+    },
+    {
+      "id": "06_legal_disclaimer",
+      "axis": "Semantic Context",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "transcreation_level": "none_strict_compliance"
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Must anchor the legal text block cleanly at the bottom, dynamically shrinking text size if necessary to fit the final 5 seconds.",
+        "gate_2_semantics": "LLM must dynamically switch to OFF for transcreation. Must enforce 100% literal dictionary translation to maintain legal compliance."
+      },
+      "standard_app_failure_mode": "Attempts to 'transcreate' the legal warning to save visual space, illegally dropping critical disclaimers like 'loss of principal'."
+    },
+    {
+      "id": "07_tiktok_minefield",
+      "axis": "UI Safe-Zones",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "bounding_box_y": "middle",
+        "bounding_box_x": "center_left"
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Text bounding box must artificially constrict to avoid the bottom-right 9:16 TikTok UI interaction zone.",
+        "gate_2_semantics": "Preserve the aggressive CTA 'click the link'."
+      },
+      "standard_app_failure_mode": "Renders text in the bottom right corner exactly where the creator is pointing, rendering the text completely unreadable beneath the TikTok 'Share' buttons."
+    },
+    {
+      "id": "08_linkedin_carousel",
+      "axis": "UI Safe-Zones",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "aspect_ratio": "1:1",
+        "bounding_box_y": "center"
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Text must lock dead-center (Y-axis 50%) to avoid the bottom 15% progress bar.",
+        "gate_2_semantics": "Preserve authoritative professional list-hook intonation."
+      },
+      "standard_app_failure_mode": "Subtitles render at the default bottom 15%, bleeding directly into LinkedIn's native video progress timeline."
+    },
+    {
+      "id": "09_lower_thirds_clasher",
+      "axis": "UI Safe-Zones",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "dynamic_temporal_avoidance": true,
+        "shift_timestamp_sec": 4.0
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Text renders Bottom-Center for 3.9 seconds, then dynamically jumps to Top-Center precisely at 0:04 to avoid the hardcoded news graphic.",
+        "gate_2_semantics": "Standard broadcast formal translation pacing."
+      },
+      "standard_app_failure_mode": "Blindly prints subtitles over the hardcoded breaking news lower-third graphic, causing catastrophic visual collision."
+    },
+    {
+      "id": "10_the_overlap",
+      "axis": "Acoustic ASR Traps",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "diarization_enforcement": "strict",
+        "cut_timestamp_sec": 5.0
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Must execute a hard visual cut exactly at 0:05.",
+        "gate_2_semantics": "Strict speaker diarization. Subtitle cards for Person A and Person B must never merge into a single text block."
+      },
+      "standard_app_failure_mode": "The ASR panics during the cross-talk interruption and merges both voices into one schizophrenic subtitle card."
+    },
+    {
+      "id": "11_mumble_ugc",
+      "axis": "Acoustic ASR Traps",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "filler_word_sanitization": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Visual timestamps must tighten purely to semantic words, avoiding holding text on screen during 'um' gaps.",
+        "gate_2_semantics": "LLM must explicitly sanitize audio filler and false starts from the final printed output into a clean thought."
+      },
+      "standard_app_failure_mode": "Blindly typesets the garbage audio literally: 'Um, I wanted... you should... um, this phone'."
+    },
+    {
+      "id": "12_sonic_mess",
+      "axis": "Acoustic ASR Traps",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "noise_floor_rejection": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Pacing remains perfectly stable despite acoustic background chaos.",
+        "gate_2_semantics": "Cleanly extracts the screaming vocal track and translates the core excitement without hallucinating."
+      },
+      "standard_app_failure_mode": "ASR hallucinates ghost words ('and', 'the') out of the wind and traffic noise, printing non-existent dialogue."
+    },
+    {
+      "id": "13_causative_squeeze",
+      "axis": "The Pareto Squeeze",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "max_cps_limit": 21.0,
+        "force_single_screen": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Must keep the psychological hook entirely on a single screen.",
+        "gate_2_semantics": "Radical transcreation: Must drop the literal noun 'fuel source' (Energiequelle) to preserve the causative agency 'Allow/Let' ('Lass deinen Körper Fett verbrennen')."
+      },
+      "standard_app_failure_mode": "Drops the active hook entirely to save space, outputting a passive biological fact ('Dein Körper nutzt Fett'), or splits across two screens ruining the hook."
+    },
+    {
+      "id": "14_compound_crunch",
+      "axis": "The Pareto Squeeze",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "max_cpl_limit": 30,
+        "prevent_mid_word_breaks": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Must mathematically wrap the line without slicing a compound word.",
+        "gate_2_semantics": "Must prompt the LLM to use standardized B2B abbreviations (e.g., 'Cloud-ERP-Systeme') to protect bounding box physics against massive literal compounds."
+      },
+      "standard_app_failure_mode": "Translates to a 35-letter monolithic German word and blindly chops it at the visual boundary ('Unternehmensressourcen- / planung')."
+    },
+    {
+      "id": "15_cultural_time_bomb",
+      "axis": "The Pareto Squeeze",
+      "source_language": "en",
+      "target_language_test": "de",
+      "constraints": {
+        "idiom_mapping": "native_equivalent",
+        "max_cps_limit": 21.0
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Maintains balanced layout constraints under 21 CPS.",
+        "gate_2_semantics": "Must completely abandon the literal translation and map the English idiom ('bite the bullet') to the exact native emotional equivalent ('in den sauren Apfel beißen')."
+      },
+      "standard_app_failure_mode": "Translates the idiom literally (e.g., 'Die Kugel beißen'), resulting in a confusing, nonsensical subtitle that ruins the video."
+    },
+    {
+      "id": "16_the_density_bomb",
+      "axis": "Origin-Agnostic Processing",
+      "source_language": "zh",
+      "target_language_test": "en",
+      "constraints": {
+        "temporal_expansion": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Layout Engine must expand the target English output into distinct, mathematically balanced cards that hold slightly past the Chinese audio envelope to ensure reading comfort.",
+        "gate_2_semantics": "Unpacks dense Mandarin characters into fully formed English descriptive adjectives."
+      },
+      "standard_app_failure_mode": "Chinese is phonetically fast. The English translation forces 10+ words to flash on screen in a 2-second strobe light."
+    },
+    {
+      "id": "17_velocity_asymmetry",
+      "axis": "Origin-Agnostic Processing",
+      "source_language": "es",
+      "target_language_test": "en",
+      "constraints": {
+        "proportional_time_stretching": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Layout engine dynamically anchors the shorter English text across the full kinetic energy of the Spanish audio waveform so it feels visually synchronous.",
+        "gate_2_semantics": "Translates the passionate UGC tone without losing intent."
+      },
+      "standard_app_failure_mode": "Flashes the shorter English text for 3 seconds, leaving the screen awkwardly blank for 5 seconds while the Spanish speaker is still gesturing wildly."
+    },
+    {
+      "id": "18_compound_disassembly",
+      "axis": "Origin-Agnostic Processing",
+      "source_language": "de",
+      "target_language_test": "en",
+      "constraints": {
+        "semantic_binding_ms": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Binds the 3 English words as a single semantic entity and stretches it perfectly across the exact start-to-finish waveform of the massive German audio word.",
+        "gate_2_semantics": "Accurately parses the specific B2B software compliance term ('GDPR compliance')."
+      },
+      "standard_app_failure_mode": "Timestamps the entire English phrase to the final 0.5-second syllable of the German word, completely out of sync with the speaker's mouth."
+    },
+    {
+      "id": "19_rtl_native_crash",
+      "axis": "Origin-Agnostic Processing",
+      "source_language": "ar",
+      "target_language_test": "en",
+      "constraints": {
+        "rtl_metadata_stripping": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Completely strips RTL metadata in Pass-1. Mathematically renders perfect Left-To-Right English syntax, placing periods cleanly on the right side.",
+        "gate_2_semantics": "Maintains luxury architectural tone."
+      },
+      "standard_app_failure_mode": "Corrupts the LTR target UI, inheriting Arabic metadata to output flipped text logic and punctuation on the wrong side: '.today exactly lifestyle luxury your fits'"
+    },
+    {
+      "id": "20_pro_drop_hallucination",
+      "axis": "Origin-Agnostic Processing",
+      "source_language": "ko",
+      "target_language_test": "en",
+      "constraints": {
+        "global_context_flattening": true
+      },
+      "pass_criteria": {
+        "gate_1_physics": "Matches casual vlog pacing.",
+        "gate_2_semantics": "Pass-1 Linguist flattens global visual/semantic context. Recognizes the speaker is a vlogger talking about herself and correctly injects the unstated pronoun ('I' or 'We') required by English grammar."
+      },
+      "standard_app_failure_mode": "Because Korean drops pronouns, an AI without global context panics and randomly hallucinates the wrong pronoun ('He applies it every morning')."
+    }
+  ]
+}
