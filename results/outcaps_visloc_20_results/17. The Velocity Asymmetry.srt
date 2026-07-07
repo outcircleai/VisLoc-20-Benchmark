@@ -1,0 +1,258 @@
+[Spanish]
+1
+00:00:00,000 --> 00:00:02,440
+Chicos, no os vais a creer
+la absoluta locura
+
+2
+00:00:02,520 --> 00:00:05,160
+que es este interesantísimo
+dispositivo.
+
+3
+00:00:05,240 --> 00:00:06,500
+Tenéis que probarlo ahora
+
+4
+00:00:06,580 --> 00:00:08,090
+mismo, porque os prometo que lo
+
+[French (France)]
+1
+00:00:00,000 --> 00:00:02,130
+Les amis, vous n'allez pas croire
+
+2
+00:00:02,220 --> 00:00:05,160
+à quel point cet appareil
+est incroyable.
+
+3
+00:00:05,240 --> 00:00:07,740
+Testez-le vite, je vous promets que
+
+[German]
+1
+00:00:00,000 --> 00:00:02,400
+Leute, ihr werdet nicht glauben,
+
+2
+00:00:02,510 --> 00:00:05,160
+wie absolut genial dieses Gerät ist!
+
+3
+00:00:05,240 --> 00:00:06,740
+Ihr müsst es sofort testen,
+
+4
+00:00:06,820 --> 00:00:07,990
+denn ich verspreche euch:
+
+[Italian]
+1
+00:00:00,000 --> 00:00:00,890
+Ragazzi, non crederete
+
+2
+00:00:00,970 --> 00:00:04,350
+a quanto sia pazzesco
+questo dispositivo
+
+3
+00:00:04,430 --> 00:00:06,620
+interessantissimo. Provatelo subito,
+
+4
+00:00:06,700 --> 00:00:07,990
+vi prometto che lo
+
+[Portuguese (Brazil)]
+1
+00:00:00,000 --> 00:00:02,880
+Gente, vocês
+não vão acreditar no quanto
+
+2
+00:00:02,960 --> 00:00:05,160
+esse dispositivo
+sensacional é incrível.
+
+3
+00:00:05,240 --> 00:00:06,620
+Vocês têm que testar
+
+4
+00:00:06,700 --> 00:00:07,990
+agora, porque eu prometo que ele
+
+[Japanese]
+1
+00:00:00,000 --> 00:00:02,780
+みんな！​ この超​面白い​デバイス、
+
+2
+00:00:02,860 --> 00:00:05,160
+マジで​ヤバ​すぎるよ！
+
+3
+00:00:05,240 --> 00:00:06,850
+今すぐ​試してみて！
+
+4
+00:00:06,930 --> 00:00:07,990
+保証するから
+
+[Mandarin (Simplified)]
+1
+00:00:00,000 --> 00:00:04,170
+家​人们，​你们​绝对​不敢相信
+这个​超级​有趣的​神器​有
+
+2
+00:00:04,260 --> 00:00:05,120
+多​ 疯狂！
+
+3
+00:00:05,280 --> 00:00:07,990
+你们​现在​就​必须得
+试试，​因为​我​向​你​保证
+
+[Arabic (Modern Standard)]
+1
+00:00:00,000 --> 00:00:02,670
+يا رفاق،
+لن تصدقوا الروعة المطلقة
+
+2
+00:00:02,760 --> 00:00:05,160
+لهذا الجهاز المثير للاهتمام.
+
+3
+00:00:05,240 --> 00:00:07,990
+عليكم تجربته الآن،
+لأنني أعدكم بأنه
+
+[Hindi]
+1
+00:00:00,000 --> 00:00:01,950
+दोस्तों, आप यकीन नहीं करेंगे
+
+2
+00:00:02,030 --> 00:00:05,160
+कि यह कमाल का
+डिवाइस कितना बवाल है।
+
+3
+00:00:05,240 --> 00:00:07,990
+इसे अभी आज़माएं, मेरा वादा है कि यह
+
+[Russian]
+1
+00:00:00,000 --> 00:00:02,140
+Ребята, вы не поверите,
+насколько
+
+2
+00:00:02,220 --> 00:00:05,160
+безумно крут этот
+интереснейший гаджет!
+
+3
+00:00:05,240 --> 00:00:07,160
+Вы должны оценить
+его прямо сейчас,
+
+4
+00:00:07,240 --> 00:00:07,990
+обещаю, вы...
+
+[English (US)]
+1
+00:00:00,000 --> 00:00:01,760
+Guys, you won't believe
+
+2
+00:00:01,840 --> 00:00:05,160
+how mind-blowing this
+interesting device is.
+
+3
+00:00:05,240 --> 00:00:07,990
+Try it right now,
+because I promise you'll
+
+[Thai]
+1
+00:00:00,000 --> 00:00:03,380
+ทุกคน​ต้อง​ไม่​เชื่อ​แน่​ว่าเจ้า​เครื่อง​นี้
+
+2
+00:00:03,470 --> 00:00:07,990
+มัน​สุดยอด​แค่​ไหน​ต้อง
+ลองเลยครับ​รับรอง​ว่า
+
+[Polish]
+1
+00:00:00,000 --> 00:00:01,780
+Ludzie, nie uwierzycie,
+
+2
+00:00:01,870 --> 00:00:05,160
+jakim obłędem jest
+to megaciekawe urządzenie.
+
+3
+00:00:05,240 --> 00:00:06,440
+Musicie to sprawdzić,
+
+4
+00:00:06,520 --> 00:00:07,990
+obiecuję, że was zachwyci!
+
+[Indonesian]
+1
+00:00:00,000 --> 00:00:02,540
+Guys, kalian gak
+bakal percaya betapa
+
+2
+00:00:02,620 --> 00:00:05,160
+gokilnya perangkat
+super menarik ini!
+
+3
+00:00:05,240 --> 00:00:07,990
+Kalian harus coba sekarang
+juga, karena aku jamin
+
+[Swedish]
+1
+00:00:00,000 --> 00:00:01,830
+Hörni, ni kommer inte tro
+
+2
+00:00:01,910 --> 00:00:05,160
+hur galet grym
+den här intressanta prylen är.
+
+3
+00:00:05,240 --> 00:00:06,840
+Ni måste testa direkt,
+
+4
+00:00:06,930 --> 00:00:07,990
+för jag lovar att ni
+
+[Dutch]
+1
+00:00:00,000 --> 00:00:02,200
+Jongens, je gelooft echt niet hoe
+
+2
+00:00:02,280 --> 00:00:05,160
+bizar vet dit superinteressante
+apparaat is!
+
+3
+00:00:05,240 --> 00:00:07,990
+Probeer 'm nu, ik beloof je dat je 'm
