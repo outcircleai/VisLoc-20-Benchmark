@@ -38,3 +38,4 @@ Each video is scored on **3 axes** (100 points total):
 3. Evaluate the localized output against the `SCORING_RUBRIC.md` and the `visloc_ground_truth.json` answer key.
 
 > **Note**: Any output that requires a human to manually drag a timeline slider or hit 'Enter' to fix a line break has failed the automation test.
+> ** AI generated videos, with google veo. The person showing are not real**
