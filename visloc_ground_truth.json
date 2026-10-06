@@ -35,13 +35,15 @@
       "target_language_test": "de",
       "constraints": {
         "timing_alignment": "strict_blank_screen",
-        "pause_duration_sec": 3.0
+        "pause_duration_sec": 3.0,
+        "pause_duration_sec_measured": 0.7
       },
       "pass_criteria": {
         "gate_1_physics": "The 3-second pause must result in a completely blank screen.",
         "gate_2_semantics": "Segmenter must mathematically shift the preposition backward to complete the thought before the pause occurs. No dangling articles."
       },
-      "standard_app_failure_mode": "Leaves a dangling article (e.g., 'the' or 'am') stranded on screen alone for 3 full seconds of silence."
+      "standard_app_failure_mode": "Leaves a dangling article (e.g., 'the' or 'am') stranded on screen alone for 3 full seconds of silence.",
+      "known_issue": "2026-10-06: the published clip has no 3-second pause. Its longest gap in speech is about 0.7 s (ffmpeg silencedetect, -20 dB, 0.3 s minimum; 6.82-7.28 s). Gate 1 cannot be tested on this clip until it is regenerated with a real 3-second pause; gate 2 still applies."
     },
     {
       "id": "03_spaceless_gauntlet",
