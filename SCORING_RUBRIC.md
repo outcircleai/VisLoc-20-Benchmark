@@ -1,3 +1,5 @@
+> **Note (2026-10):** this rubric is the scoring scheme of the VisLoc-20 benchmark, written to compare tools on these 20 clips. It is not OutCaps' production specification; for example, OutCaps treats reading speed as a target, not a pass/fail limit.
+
 # The VisLoc-20 Evaluation Protocol
 
 ## 🛑 GATE 1: The UI Physics Check (Pass/Fail)
